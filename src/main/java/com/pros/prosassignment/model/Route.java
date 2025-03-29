@@ -1,4 +1,4 @@
-package com.pros.prosassignment.sub1;
+package com.pros.prosassignment.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -26,7 +26,15 @@ public class Route {
         return totalPrice;
     }
 
-    @Override
+//    @Override
+//    public String toString() {
+//        return "Route{" +
+//                "cities=" + cities +
+//                ", totalPrice=" + totalPrice +
+//                '}';
+//    }
+
+        @Override
     public String toString() {
         String cityCodes = String.join(", ", cities.stream().map(City::getCode).toList());
         return cityCodes + ", " + totalPrice;

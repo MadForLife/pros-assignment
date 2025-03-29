@@ -1,4 +1,4 @@
-package com.pros.prosassignment.sub1;
+package com.pros.prosassignment.model;
 
 import java.math.BigDecimal;
 

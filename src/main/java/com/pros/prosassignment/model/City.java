@@ -1,4 +1,4 @@
-package com.pros.prosassignment.sub1;
+package com.pros.prosassignment.model;
 
 public class City {
 
@@ -16,6 +16,19 @@ public class City {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        City city = (City) o;
+        return code.equals(city.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return code.hashCode();
     }
 
     @Override

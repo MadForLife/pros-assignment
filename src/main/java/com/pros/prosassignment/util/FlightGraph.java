@@ -1,8 +1,15 @@
-package com.pros.prosassignment.sub1;
+package com.pros.prosassignment.util;
+
+import com.pros.prosassignment.model.City;
+import com.pros.prosassignment.model.Flight;
+import com.pros.prosassignment.model.Route;
+import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.*;
 
+@Component
 public class FlightGraph {
 
     private Map<City, List<Flight>> graph;
@@ -55,5 +62,17 @@ public class FlightGraph {
         for (Route route : routes) {
             System.out.println(route);
         }
+    }
+
+    @PostConstruct
+    public void initialize() {
+        City sof = new City("SOF", "Sofia");
+        City ist = new City("IST", "Istanbul");
+        City cmb = new City("CMB", "Colombo");
+        City mle = new City("MLE", "Malé");
+
+        addFlight(new Flight(sof, ist, new BigDecimal(10)));
+        addFlight(new Flight(ist, cmb, new BigDecimal(20)));
+        addFlight(new Flight(cmb, mle, new BigDecimal(40)));
     }
 }
