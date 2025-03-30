@@ -1,5 +1,10 @@
 package com.pros.prosassignment.sub1;
 
+import com.pros.prosassignment.model.City;
+import com.pros.prosassignment.model.Flight;
+import com.pros.prosassignment.model.Route;
+import com.pros.prosassignment.util.FlightGraph;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -21,7 +26,12 @@ public class Main {
         flightGraph.addFlight(new Flight(dubai, male, BigDecimal.valueOf(15)));
         flightGraph.addFlight(new Flight(istanbul, male, BigDecimal.valueOf(60)));
 
-        List<Route> routes = flightGraph.findAllRoutes(sofia, male);
+        List<Route> routes = flightGraph.findAllRoutes(dubai, male);
+
+        if (routes.isEmpty()) {
+            System.out.println("No routes found");
+        }
+
         flightGraph.printRoutes(routes);
     }
 }

@@ -26,14 +26,6 @@ public class Route {
         return totalPrice;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Route{" +
-//                "cities=" + cities +
-//                ", totalPrice=" + totalPrice +
-//                '}';
-//    }
-
         @Override
     public String toString() {
         String cityCodes = String.join(", ", cities.stream().map(City::getCode).toList());

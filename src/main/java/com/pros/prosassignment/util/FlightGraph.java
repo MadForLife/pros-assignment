@@ -68,11 +68,32 @@ public class FlightGraph {
     public void initialize() {
         City sof = new City("SOF", "Sofia");
         City ist = new City("IST", "Istanbul");
+        City lon = new City("LON", "London");
+        City fra = new City("FRA", "Frankfurt");
+        City dub = new City("DUB", "Dubai");
+        City sin = new City("SIN", "Singapore");
         City cmb = new City("CMB", "Colombo");
         City mle = new City("MLE", "Malé");
+        City nyc = new City("NYC", "New York");
+        City lax = new City("LAX", "Los Angeles");
+        City syd = new City("SYD", "Sydney");
 
         addFlight(new Flight(sof, ist, new BigDecimal(10)));
         addFlight(new Flight(ist, cmb, new BigDecimal(20)));
         addFlight(new Flight(cmb, mle, new BigDecimal(40)));
+
+        addFlight(new Flight(sof, lon, new BigDecimal(30)));
+        addFlight(new Flight(lon, mle, new BigDecimal(40)));
+        addFlight(new Flight(sof, fra, new BigDecimal(25)));
+        addFlight(new Flight(fra, sin, new BigDecimal(50)));
+        addFlight(new Flight(sin, mle, new BigDecimal(20)));
+        addFlight(new Flight(sof, dub, new BigDecimal(35)));
+        addFlight(new Flight(dub, mle, new BigDecimal(30)));
+        addFlight(new Flight(nyc, lon, new BigDecimal(100)));
+        addFlight(new Flight(lax, syd, new BigDecimal(120)));
+        addFlight(new Flight(lax, nyc, new BigDecimal(80)));
+        addFlight(new Flight(syd, mle, new BigDecimal(90)));
+
     }
+
 }
